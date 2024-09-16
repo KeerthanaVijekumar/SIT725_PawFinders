@@ -11,6 +11,7 @@ router.get('/bookings/:name', bookingController.getBookingByName);
 router.put('/bookings/:name', bookingController.updateBooking);
 router.delete('/bookings/:name', bookingController.deleteBooking);
 router.get('/bookings', bookingController.getSortedBookings);
-
+app.post('/registerOwner', signupController.createRegistration);
+app.post('/registerWalker', signupWalkerController.createNewWalkerRegistration);
 
 module.exports = router;
