@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Import Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Import Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Import jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Ensure viewport is set for mobile optimization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <title>Card with Video</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .navy-blue {
+        background-color: #2d807e !important; /* Navy blue color */
+      }
+      .white-text {
+        color: #ffffff !important; /* White text color */
+      } 
+      .card {
+        display: flex;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+      }
+      .card-item {
+        display: flex;
+        align-items: center;
+      }
+      .card-image {
+        flex: 1;
+        object-fit: cover;
+      }
+      .card-image img {
+        display: block;
+        width: 100px;
+        height: auto;
+        object-fit: cover;
+      }
+      .card-content {
+        flex: 1;
+        padding: 10px;
+      }
+      .card-content video {
+        width: 100%;
+        height: auto;
+      }
+      .card-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: nowrap;
+      }
+     .center-align-container {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        height: 80vh;
+        text-align: center; 
+     }
+
+    </style>
+  </head>
+
+  <body>
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <nav>
+      <div class="nav-wrapper navy-blue">
+        <a href="/" class="brand-logo">PawFinders</a>
+      </div>
+    </nav>
+    <body>
+        <div class="center-align-container">
+            <div>
+              <h3>Who are you?</h3>
+              <div style="padding: 2% 0%;">
+                <a class="waves-effect waves-light btn" style="background-color: #2d807e !important;" href="walkerSignUp.html">Dog Walker/Sitter</a>
+                <a class="waves-effect waves-light btn" style="background-color: #2d807e !important;" href="ownerSignUp.html">Dog Owner</a>
+              </div>
+            </div>
+          </div>
+          
+       
+    </body>
+    <footer class="page-footer navy-blue">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">PawFinders</h5>
+            <p class="grey-text text-lighten-4">A Friendly Pet Service</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Company</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#">About Us</a></li>
+              <li><a class="grey-text text-lighten-3" href="#">Gallery</a></li>
+              <li><a class="grey-text text-lighten-3" href="#">Contact Us</a></li>
+              <li><a class="grey-text text-lighten-3" href="#">Leadership</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2024 Copyright Text
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      $(document).ready(function(){
+        $('.sidenav').sidenav(); 
+      });
+    </script>
+  </body>
+</html>

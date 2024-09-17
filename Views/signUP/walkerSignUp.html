@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Import Materialize CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <!-- Import Google Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Import jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- Import Materialize JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <title>Registration Form in Card</title>
+  <style>
+    /* Custom color styles */
+    .navy-blue {
+      background-color: #2d807e !important; 
+    }
+    .white-text {
+      color: #ffffff !important; 
+    }
+
+    /* Style for buttons */
+    .btn, .btn-large, .btn-flat {
+      background-color: #2d807e !important; 
+      color: #ffffff !important; 
+    }
+
+    /* Style for select dropdown arrow and input fields */
+    .select-wrapper input.select-dropdown {
+      color: #2d807e !important; /* Dropdown text color */
+      border-bottom: 1px solid #2d807e !important; /* Input field bottom border color */
+    }
+    
+    /* Style for the dropdown arrow */
+    .select-dropdown.dropdown-trigger:after {
+      border-bottom: 2px solid #2d807e !important;
+      border-right: 2px solid #2d807e !important;
+    }
+
+    /* Style for tick marks */
+    .dropdown-content li>span {
+      color: #2d807e !important; /* Dropdown item color */
+    }
+
+    /* Input field styles */
+    input:not([type]):focus:not([readonly]),
+    input[type=text]:not(.browser-default):focus:not([readonly]),
+    input[type=password]:not(.browser-default):focus:not([readonly]),
+    input[type=email]:not(.browser-default):focus:not([readonly]),
+    input[type=url]:not(.browser-default):focus:not([readonly]),
+    input[type=time]:not(.browser-default):focus:not([readonly]),
+    input[type=date]:not(.browser-default):focus:not([readonly]),
+    input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+    input[type=tel]:not(.browser-default):focus:not([readonly]),
+    input[type=number]:not(.browser-default):focus:not([readonly]),
+    input[type=search]:not(.browser-default):focus:not([readonly]),
+    textarea.materialize-textarea:focus:not([readonly]) {
+      border-bottom: 1px solid #2d807e !important; /* Focus border color */
+      box-shadow: 0 1px 0 0 #2d807e !important; /* Focus shadow color */
+    }
+
+    /* Label styles */
+    .input-field label {
+      color: #2d807e !important; /* Label color */
+    }
+
+    /* Hide file upload and 'Other' text input by default */
+    #id_upload,
+    #other_certification {
+      display: none;
+      margin-top: 20px; /* Add spacing above file input */
+    }
+
+    /* Correct spacing for all input fields */
+    .input-field {
+      margin-top: 20px;
+    }
+        /* Eye icon positioning */
+    .toggle-password {
+      cursor: pointer;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper navy-blue">
+      <a href="/" class="brand-logo">PawFinders</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Register With Us</span>
+        <form>
+          <!-- Name and Last Name -->
+          <div class="input-field">
+            <input id="first_name" type="text" class="validate" required>
+            <label for="first_name">First Name*</label>
+          </div>
+          <div class="input-field">
+            <input id="last_name" type="text" class="validate" required>
+            <label for="last_name">Last Name*</label>
+          </div>
+          
+          <!-- Phone and Email -->
+          <div class="input-field">
+            <input id="phone" type="tel" class="validate" required>
+            <label for="phone">Phone*</label>
+          </div>
+          <div class="input-field">
+            <input id="email" type="email" class="validate" required>
+            <label for="email">Email*</label>
+          </div>
+          
+          <!-- ID Proof Dropdown -->
+          <div class="input-field">
+            <select id="id_proof">
+              <option value="" disabled selected>Choose your ID Proof</option>
+              <option value="1">Passport</option>
+              <option value="2">Driver's License</option>
+              <option value="3">National ID</option>
+            </select>
+            <label for="id_proof">ID Proof</label>
+          </div>
+          
+          <!-- File Upload for ID Proof -->
+          <div class="input-field" id="id_upload">
+            <p for="upload_id">Upload ID Proof (PDF Only)</p>
+            <input type="file" id="upload_id" name="idUpload" accept=".pdf">
+          </div>
+          
+          <!-- Certification Dropdown -->
+          <div class="input-field">
+            <select id="certification">
+              <option value="" disabled selected>Choose your Certification</option>
+              <option value="1">Pet Care Certification</option>
+              <option value="2">Animal Behavior Certification</option>
+              <option value="3">Veterinary Technician</option>
+              <option value="other">Other</option>
+            </select>
+            <label for="certification">Certification</label>
+          </div>
+
+          <!-- Text Input for 'Other' Certification -->
+          <div class="input-field" id="other_certification">
+            <input id="other_certification_input" type="text" class="validate">
+            <label for="other_certification_input">Please Specify Your Certification</label>
+          </div>
+
+          <!-- Address Fields -->
+          <div class="input-field">
+            <input id="address" type="text" class="validate" required>
+            <label for="address">Address</label>
+          </div>
+          <div class="input-field">
+            <input id="suburb" type="text" class="validate" required>
+            <label for="suburb">Suburb</label>
+          </div>
+          <div class="input-field">
+            <input id="postal_code" type="text" class="validate" required>
+            <label for="postal_code">Postal Code</label>
+          </div>
+
+          <!-- Service Multi-Select Dropdown -->
+          <div class="input-field">
+            <select multiple id="service">
+              <option value="" disabled>Choose your Services</option>
+              <option value="1">Dog Walking</option>
+              <option value="2">Pet Sitting</option>
+            </select>
+            <label for="service">Service</label>
+          </div>
+
+          <div class="input-field" style="position: relative;">
+            <input id="password" type="password" class="validate" required>
+            <label for="password">Password</label>
+            <i class="material-icons toggle-password" id="toggle-password">visibility_off</i>
+          </div>
+
+          <!-- Submit Button -->
+          <button id="walkerFormSubmit" class="waves-effect waves-light btn" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer class="page-footer navy-blue">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">PawFinders</h5>
+          <p class="grey-text text-lighten-4">A Friendly Pet Service</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Company</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Gallery</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Leadership</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2024 Copyright Text
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
