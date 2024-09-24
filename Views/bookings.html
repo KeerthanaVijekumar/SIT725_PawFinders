@@ -2,22 +2,25 @@
 <html>
 <head>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <style>
     .navy-blue {
-          background-color: #000080 !important; /* Navy blue color */
-        }
-        .white-text {
-          color: #ffffff !important; /* White text color */
-        } 
-
+      background-color: #000080 !important; /* Navy blue color */
+    }
+    .white-text {
+      color: #ffffff !important; /* White text color */
+    } 
     .card-container {
       display: flex;
       flex-direction: column;
       gap: 20px;
-      
+    }
+    #map {
+      height: 400px; 
+      width: 100%; 
+      display: none;
     }
   </style>
 </head>
@@ -27,19 +30,21 @@
       <a href="#" class="brand-logo">PawFinders</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="/">Home</a></li>
-        <li><a href="galery.html">Gallery</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
         <li><a href="bookings.html">View Booking</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About Us</a></li>
-        <li><a >Contact Us</a></li>
+        <li><a>Contact Us</a></li>
       </ul>
     </div>
   </nav>
 
   <h1>View Bookings</h1>
-    <button id="viewAllBookings" type="button" class="waves-effect waves-light btn">View All Bookings</button>
-    <div id="bookingDetails"></div>
-    <!-- Form to view specific booking -->
+  <button id="viewAllBookings" type="button" class="waves-effect waves-light btn">View All Bookings</button>
+  <button id="onGoingServices" type="button" class="waves-effect waves-light btn">OnGoing Service</button>
+  <div id="bookingDetails"></div>
+
+  <!-- Form to view specific booking -->
   <form id="specificBookingForm">
     <div class="input-field inline">
       <input id="specificBookingName" type="text">
@@ -47,6 +52,7 @@
     </div>
     <button id="viewSpecificBooking" type="button" class="waves-effect waves-light btn">View Specific Booking</button>
   </form>
+
   <br>
   <table id="bookingTable">
     <thead>
@@ -61,11 +67,16 @@
       <!-- Booking rows will be appended here -->
     </tbody>
   </table>
-    
-    <!-- Booking cards will be inserted here by script.js -->
+  
+  <!-- Container for the map -->
+  <div id="map"></div>
+
+  <!-- Booking cards will be inserted here by script.js -->
   <script src="js/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
+  <script src="js/map.js"></script> 
+  
   <footer class="page-footer navy-blue">
     <div class="container">
       <div class="row">
@@ -86,7 +97,7 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-      © 2024 Copyright Text
+        © 2024 Copyright Text
       </div>
     </div>
   </footer>

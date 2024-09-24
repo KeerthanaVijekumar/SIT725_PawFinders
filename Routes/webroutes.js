@@ -28,4 +28,13 @@ router.get('/services', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'Views', 'services.html'));
 });
 
+// Route to get live location of the dog walker
+router.get('/api/live-location', (req, res) => {
+    const liveLocation = {
+      lat: -34.397,
+      lng: 150.644
+    };
+    res.json(liveLocation);
+  });
+
 module.exports = router;

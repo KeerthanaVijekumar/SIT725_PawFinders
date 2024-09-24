@@ -118,3 +118,36 @@ $(document).ready(function () {
         }
     });
 });
+
+let map;
+let marker;
+
+function initMap() {
+    const location = { lat: -34.397, lng: 150.644 }; 
+  
+    const map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 12,
+      center: location,
+    });
+  
+    // Add a marker
+    new google.maps.Marker({
+      position: location,
+      map: map,
+      title: 'Dog Walker Location'
+    });
+  }
+  
+  document.getElementById('onGoingServices').addEventListener('click', () => {
+    const mapElement = document.getElementById('map');
+  
+    
+    if (mapElement.style.display === 'none') {
+      mapElement.style.display = 'block'; 
+  
+      // Initialize the map
+      initMap();
+    } else {
+      mapElement.style.display = 'none'; 
+    }
+  });
