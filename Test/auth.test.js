@@ -62,7 +62,6 @@ describe('Authentication Tests', () => {
   });
 
   it('should not login with invalid credentials', async () => {
-    // Try logging in with incorrect credentials
     const res = await chai.request(app)
       .post('/login')
       .send({
