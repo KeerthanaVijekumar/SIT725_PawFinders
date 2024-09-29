@@ -1,18 +1,21 @@
 const mongoose = require("mongoose");
 const { expect } = require("chai");
-const {
-  Booking,
-  mongoURI,
-  runDBConnection,
-} = require("../Models/bookingmodel"); // Adjust this if your model is in a different location
+require('dotenv').config(); // To load environment variables like MONGODB_URI
+const { Booking } = require("../Models/bookingmodel"); // Adjust this path if needed
 
 describe("Booking Model", () => {
+  before(async () => {
+    // Connect to MongoDB using the URI from the .env file
+    const mongoURI = process.env.MONGODB_URI;
+    await mongoose.connect(mongoURI);
+  });
+
   beforeEach(async () => {
-    await Booking.deleteMany({});
+    await Booking.deleteMany({}); // Clean up the collection before each test
   });
 
   after(async () => {
-    await mongoose.disconnect();
+    await mongoose.disconnect(); // Disconnect after all tests
   });
 
   it("should create a new booking", async () => {
@@ -53,7 +56,9 @@ describe("MongoDB Connection", () => {
   before(async function () {
     this.timeout(5000); // Increase timeout for connection tests if needed
     try {
-      await runDBConnection();
+      // Connect to MongoDB using the URI from the .env file
+      const mongoURI = process.env.MONGODB_URI;
+      await mongoose.connect(mongoURI);
       console.log("MongoDB connected successfully");
     } catch (error) {
       console.error("Error connecting to MongoDB:", error);
@@ -69,10 +74,8 @@ describe("MongoDB Connection", () => {
         .findOne({});
       if (result) {
         console.log("MongoDB is operational.");
-        // Optionally, you can check if the result matches expected data
       } else {
         console.log("No data found in the Booking collection.");
-        // You can handle this case as needed
       }
     } catch (error) {
       console.error("Error during MongoDB query:", error);
