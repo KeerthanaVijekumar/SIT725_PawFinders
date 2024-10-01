@@ -18,21 +18,21 @@
     <link rel="stylesheet" href="css/profile.css" />
   </head>
   <body>
-    <header>
-      <h5>PawFinders</h5>
-      <div class="right-links">
-        <ul>
-          <li><a href="findsitter.html">Find a Sitter</a></li>
-          <li><a id="viewBookingsLink">View bookings</a></li>
-          <li><a href="javascript:void(0);" id="logoutLink">Logout</a></li>
+    <nav style="margin: 0%;">
+      <div class="nav-wrapper navy-blue" style="background-color: #2d807e; ">
+        <a class="brand-logo" style="padding-left: 1%; padding-top: 0.3%;">PawFinders</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/dashboard" style="font-weight: normal; padding: 0; text-decoration: none;">Home</a></li>
+          <li ><a href="findsitter.html" style="font-weight: normal; padding: 0; text-decoration: none;">Find a Sitter</a></li>
+          <li><a id="viewBookingsLink" style="font-weight: normal; padding: 0; text-decoration: none;">View bookings</a></li>
+          <li><a href="javascript:void(0);" id="logoutLink" style="font-weight: normal; padding: 0;text-decoration: none;">Logout</a></li>
         </ul>
       </div>
-    </header>
-
+    </nav>
+  
     <div class="container">
-      <h2>Profile</h2>
       <div class="profile-info">
-        <h3>Personal Information</h3>
+        <h5>Personal Information</h5>
         <p><strong>First Name:</strong> <span id="firstName"></span></p>
         <p><strong>Last Name:</strong> <span id="lastName"></span></p>
         <p><strong>Phone:</strong> <span id="phone"></span></p>
@@ -41,6 +41,10 @@
         <p><strong>Suburb:</strong> <span id="suburb"></span></p>
         <p><strong>Postal Code:</strong> <span id="postalCode"></span></p>
       </div>
+      <p>
+        For any changes to your profile details, please email us at
+        <a href="mailto:pawfinder@contact.us">pawfinder@contact.us</a>
+      </p>
       <button id="review" class="review-button">Leave a Review</button>
       <button id="contact" class="review-button">Book for Services</button>
 
