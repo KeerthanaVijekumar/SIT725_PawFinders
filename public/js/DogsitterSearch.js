@@ -26,10 +26,10 @@ document
           .map(
             (result) => `
                 <div class="card">
-                    <h3>${result.firstName} ${result.lastName}</h3>
-                    <p>${result.address}, ${result.suburb}, ${result.postalCode}</p>
-                    <p>Email: ${result.email}</p>
-                    <p>Phone: ${result.phone}</p>
+                    <h5 style="padding:2%">${result.firstName} ${result.lastName}</h5>
+                    <p style="margin: 0">${result.address}, ${result.suburb}, ${result.postalCode}</p>
+                    <p style="margin: 0">Email: ${result.email}</p>
+                    <p >Phone: ${result.phone}</p>
                     <button class="contact-button" data-id="${result._id}">Contact</button>
                 </div>
             `

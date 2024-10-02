@@ -1,6 +1,7 @@
 //socket io
 const socket = io();
 socket.on("Transaction", (data) => {
+  console.log(data);
   showNotification();
 });
 
@@ -46,7 +47,12 @@ const updateBookingsLayout = (bookings) => {
     } else {
       if (user?.type == "OWNER") {
         addToHistory(item);
-      } else {
+      } else if (
+        user?.type == "WALKER" &&
+        item.confirmed &&
+        item.confirmation
+      ) {
+        addToHistory(item);
       }
     }
   });
@@ -62,7 +68,6 @@ const handleConfirm = (booking, cardElement) => {
 function handleDecline(booking, cardElement) {
   deleteBooking(booking._id);
   updateBookingConfirmation(1, booking._id, false);
-  socket.emit("Transaction", { notificateUserId });
   cardElement.remove();
 }
 
@@ -146,7 +151,11 @@ function addToHistory(item) {
     <div class="card-info">Date: ${date}</div>
     <div class="card-info">Time: ${time}</div>
     <div class="card-info">Location: ${item.address}</div>
-    <a href="review.html" class="review-button">Leave a Review</a>
+    ${
+      userObj?.type === "OWNER"
+        ? '<a href="review.html" class="review-button">Leave a Review</a>'
+        : ``
+    }
     ${
       item.confirmation && item.confirmed
         ? `<span class="confirmation-label">Confirmed</span>`

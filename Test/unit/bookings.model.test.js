@@ -5,7 +5,7 @@ const {
   Booking,
   findByUserId,
   findByIdAndUpdate,
-} = require("../Models/bookings");
+} = require("../../Models/bookings");
 
 describe("Booking Model", () => {
   afterEach(() => {

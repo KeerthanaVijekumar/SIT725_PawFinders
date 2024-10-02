@@ -5,6 +5,7 @@
   <br/>
   <h1> <b> PawFinders </b></h1>
   <strong>PawFinders is a platform dedicated to helping pet owners connect with reliable dog walkers and manage their pets' care with ease. With features like real-time updates, booking notifications, and reviews, PawFinders ensures a smooth experience for both dog owners and dog walkers.</strong>
+
 </div>
 
 <br/>
@@ -16,6 +17,7 @@
 </p>
 
 This is a public repository for the SIT725 group project, PawFinders. The project aims to simplify pet care by providing a platform where pet owners can search for dog walkers based on location, book and manage dog walkers for the services they require. Dog walkers can register, offer their services, manage their profiles, and confirm bookings with ease.
+
 
 ## Team Members
 
@@ -57,9 +59,11 @@ This is a public repository for the SIT725 group project, PawFinders. The projec
 - They can confirm or decline bookings based on their availability.
 - Confirmed bookings include all relevant details such as date, time, location, and services.
 
+
 ## Installation
 
 To run the project locally, follow these steps:
+
 
 ##### Docker installation
 
@@ -79,10 +83,12 @@ To run the project locally, follow these steps:
 ##### Running program in the Linux/Windows system
 
 01. Clone the repository:
+
    ```
    git clone https://github.com/KeerthanaVijekumar/SIT725_PawFinders.git
    ```
 02. Under the root directory, execute: 
+
   ```
   npm start
   ```

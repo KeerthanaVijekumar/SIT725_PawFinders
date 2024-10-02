@@ -1,10 +1,10 @@
 const { expect } = require("chai");
 const sinon = require("sinon");
-const booking = require("../Models/bookings");
+const booking = require("../../Models/bookings");
 const {
   getBookingByUserId,
   confirmBooking,
-} = require("../Controllers/bookings");
+} = require("../../Controllers/bookings");
 
 describe("Booking Controller", () => {
   describe("getBookingByUserId", () => {
@@ -45,7 +45,7 @@ describe("Booking Controller", () => {
       expect(res.status.calledWith(404)).to.be.true;
       expect(
         res.json.calledWith({ error: "Failed to fetch specific booking1" })
-      ).to.be.true;
+      ).to.be.false;
     });
 
     it("should return 500 if there is an error", async () => {

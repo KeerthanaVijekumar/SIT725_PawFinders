@@ -53,29 +53,40 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for depth */
         margin: 10px 0; /* Add margin for spacing */
       }
+      footer {
+        text-align: center;
+        padding: 5px;
+        background-color: #2d807e;
+        color: white;
+        bottom: 0;
+        width: 100%;
+      }
     </style>
   </head>
-  <body>
+  <body style="margin: 0;">
     <nav>
       <div class="nav-wrapper navy-blue">
-        <a href="#" class="brand-logo">PawFinders</a>
+        <a class="brand-logo" style="padding-left: 1%">PawFinders</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="/dashboard.html">Home</a></li>
           <li><a href="galery.html">Gallery</a></li>
-          <li><a href="bookings.html">View Booking</a></li>
-          <li><a href="services.html">Services</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="findsitter.html">Find a Sitter</a></li>
+          <li><a id="viewBookingsLink" style="cursor: pointer;">View bookings</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="javascript:void(0);" id="logoutLink">Logout</a></li>
         </ul>
       </div>
     </nav>
+<div style="margin: 2%;">
 
-    <h1>Services</h1>
+
+    <h3>Services</h3>
     <br />
     <div class="card-container">
       <div class="card">
         <div class="card-image">
-          <img src="src/dog_walker-scaled.jpg" alt="Pack Walk" />
+          <img src="src/dog_walker-scaled.jpg" style="height: 260.63px;" alt="Pack Walk" />
         </div>
         <div class="card-content">
           <span class="card-title">Pack Walk</span>
@@ -84,7 +95,7 @@
             Cost: $20
           </p>
         </div>
-        <div class="col s12 center-align">
+        <div class="col s12 center-align" style="padding: 2%;">
           <a
             class="waves-effect waves-light btn click-me-button modal-trigger"
             data-target="modal1"
@@ -97,7 +108,7 @@
 
       <div class="card">
         <div class="card-image">
-          <img src="src/dog_w.jpg" alt="Solo Walk" />
+          <img src="src/dog_w.jpg" style="height: 260.63px;" alt="Solo Walk" />
         </div>
         <div class="card-content">
           <span class="card-title">Solo Walk</span>
@@ -106,7 +117,7 @@
             Cost: $15
           </p>
         </div>
-        <div class="col s12 center-align">
+        <div class="col s12 center-align" style="padding: 2%;">
           <a
             class="waves-effect waves-light btn click-me-button modal-trigger"
             data-target="modal1"
@@ -119,7 +130,7 @@
 
       <div class="card">
         <div class="card-image">
-          <img src="src/sleep.jpg" alt="Pooch Sleepover" />
+          <img src="src/sleep.jpg"  style="height: 260.63px;" alt="Pooch Sleepover" />
         </div>
         <div class="card-content">
           <span class="card-title">Pooch Sleepover</span>
@@ -128,7 +139,7 @@
             Cost: $50
           </p>
         </div>
-        <div class="col s12 center-align">
+        <div class="col s12 center-align" style="padding: 2%;">
           <a
             class="waves-effect waves-light btn click-me-button modal-trigger"
             data-target="modal1"
@@ -139,8 +150,6 @@
         </div>
       </div>
     </div>
-
-    <div id="realTimeUpdates"></div>
 
     <div id="modal1" class="modal modal-fixed-footer">
       <div class="row modal-content">
@@ -175,38 +184,12 @@
         </form>
       </div>
     </div>
-
+  </div>
     <script src="js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-    <footer class="page-footer navy-blue">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">PawFinders</h5>
-            <p class="grey-text text-lighten-4">A Friendly Pet Service</p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Company</h5>
-            <ul>
-              <li>
-                <a class="grey-text text-lighten-3" href="#!">About Us</a>
-              </li>
-              <li><a class="grey-text text-lighten-3" href="#!">Gallery</a></li>
-              <li>
-                <a class="grey-text text-lighten-3" href="#!">Contact Us</a>
-              </li>
-              <li>
-                <a class="grey-text text-lighten-3" href="#!">Leadership</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="container">© 2024 Copyright Text</div>
-      </div>
-    </footer>
     <script type="text/javascript" src="/js/common.js"></script>
   </body>
+  <footer class="navy-blue">
+    <p>&copy; 2024 PawFinders</p>
+  </footer>
 </html>
