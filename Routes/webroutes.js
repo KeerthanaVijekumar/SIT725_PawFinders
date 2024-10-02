@@ -33,7 +33,7 @@ router.get("/services", (req, res) => {
 });
 
 // Route to serve search.html
-router.get("/search", (req, res) => {
+router.get("/findsitter", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "Views", "findsitter.html"));
 });
 
