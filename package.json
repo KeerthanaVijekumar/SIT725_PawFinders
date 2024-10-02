@@ -2,7 +2,7 @@
   "scripts": {
     "start": "nodemon server.js",
     "test": "mocha ./Test/unit/*.test.js",
-    "e2e": "npx playwright test Test/e2e/*.test.js"
+    "e2e": "npx playwright test Test/e2e"
   },
   "dependencies": {
     "all": "^0.0.0",
@@ -13,12 +13,10 @@
     "mocha": "^10.7.3",
     "mongoose": "^8.5.3",
     "nodemon": "^3.1.4",
-    "playwright": "^1.47.2",
     "socket.io": "^4.7.5"
   },
   "devDependencies": {
     "@playwright/test": "^1.47.2",
-    "node-mocks-http": "^1.16.0",
     "sinon": "^18.0.0",
     "supertest": "^7.0.0"
   }
