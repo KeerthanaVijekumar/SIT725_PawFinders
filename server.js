@@ -58,8 +58,6 @@ io.on("connection", (socket) => {
     const socketId = users[userId];
     if (socketId) {
       io.to(socketId).emit("Transaction", { message: "New message" });
-    } else {
-      socket.broadcast.emit("Transaction", { message: "New message" });
     }
   });
 });
