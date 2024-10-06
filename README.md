@@ -98,3 +98,21 @@ To run the project locally, follow these steps:
   http://localhost:3041
   ```
 
+## To run the test cases: 
+
+
+##### Unit Test
+
+01. Under the root directory, execute: 
+   
+  ``` bash
+  npm test
+  ```
+
+##### E2E Test
+
+01. Under the root directory, execute: 
+   
+  ``` bash
+  npm run e2e
+  ```
